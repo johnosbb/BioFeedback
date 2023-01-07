@@ -5,7 +5,7 @@ Using Light and other sensory forms for Biofeedback
 ## References
 
 - [biofeedback through ambient light for stress intervention and relaxation assistance](https://link.springer.com/article/10.1007/s00779-018-1141-6)
-- [WS2812B based project](https://www.google.com/search?q=WS2812B+5050+RGB+LED+IC+how+to+use&sxsrf=ALiCzsaaDPtqMgTUT1xsgj53XsjOHb8aVw%3A1672328987511&ei=G7etY8jzHtuBhbIP4vOasAg&ved=0ahUKEwiI7f35lp_8AhXbQEEAHeK5BoYQ4dUDCA8&uact=5&oq=WS2812B+5050+RGB+LED+IC+how+to+use&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIFCAAQogQyBQgAEKIEMgUIABCiBDIFCAAQogQ6CggAEEcQ1gQQsAM6BAghEBU6BQghEKABOgcIIRCgARAKSgQIQRgASgQIRhgAUJMHWMgaYIEcaAFwAXgAgAG6AYgBtweSAQM3LjOYAQCgAQHIAQjAAQE&sclient=gws-wiz-serp#fpstate=ive&vld=cid:0aa75cf0,vid:UhYu0k2woRM)
+- [WS2812B based project]https://howtomechatronics.com/tutorials/arduino/how-to-control-ws2812b-individually-addressable-leds-using-arduino/)
 
 ## Hardware
 
