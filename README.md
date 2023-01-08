@@ -6,7 +6,8 @@ Using Light and other sensory forms for Biofeedback
 
 - [biofeedback through ambient light for stress intervention and relaxation assistance](https://link.springer.com/article/10.1007/s00779-018-1141-6)
 - [WS2812B based project]https://howtomechatronics.com/tutorials/arduino/how-to-control-ws2812b-individually-addressable-leds-using-arduino/)
-- [FastLed Library](https://github.com/FastLED/FastLED)
+- [FastLed Library Github](https://github.com/FastLED/FastLED)
+- [FastLed Homepage](https://fastled.io/)
 
 ## Hardware
 
