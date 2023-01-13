@@ -19,7 +19,8 @@ Using Light and other sensory forms for Biofeedback
 
 ## Software
 
--[FastLED  3.1 API Documentation](http://fastled.io/docs/3.1/)
+- [FastLED  3.1 API Documentation](http://fastled.io/docs/3.1/)
+- [FastLed Library on Github](https://github.com/FastLED/FastLED/wiki/API-Reference)
 
 ## Creating a Project
 
