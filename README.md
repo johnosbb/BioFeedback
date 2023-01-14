@@ -31,6 +31,11 @@ Using Light and other sensory forms for Biofeedback
 - [FastLed Library on Github](https://github.com/FastLED/FastLED/wiki/API-Reference)
 - [Pixel Reference and Pre-defined colours](https://github.com/FastLED/FastLED/wiki/Pixel-reference)
 
+
+## Reference Software Projects
+
+- [Mini Arduino Portable EEG - Brain Wave Monitor](https://www.instructables.com/Mini-Arduino-Portable-EEG-Brain-Wave-Monitor-/)
+
 ## Creating a Project
 
 You will need to add the FastLed library
