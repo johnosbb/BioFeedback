@@ -6,6 +6,7 @@ Using Light and other sensory forms for Biofeedback
 
 - [Biofeedback through ambient light for stress intervention and relaxation assistance](https://link.springer.com/article/10.1007/s00779-018-1141-6)
 - [Binaural Beats & Hemi Sync Technology](https://consciousnessliberty.com/unlock-your-genius-through-brain-synchronization/)
+- [The Treatment of Migraine with Variable Frequency Photo-Stimulation](http://www.abcwellness.com/migraines.html)
 - [Effect of Near-Infrared Pulsed Light on the Human Brain Using Electroencephalography](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7954620/)
 - [Brainwave Frequenceies](https://consciousnessliberty.com/5-brainwave-states-you-should-know-about/)
 - [WS2812B based project]https://howtomechatronics.com/tutorials/arduino/how-to-control-ws2812b-individually-addressable-leds-using-arduino/)
@@ -18,6 +19,8 @@ Using Light and other sensory forms for Biofeedback
 - [TLC59711 Code](https://github.com/adafruit/Adafruit_TLC59711/blob/master/Adafruit_TLC59711.cpp)
 - [Hardware](https://www.adafruit.com/product/1455?hidden=yes&main_page=product_info&products_id=1455&gclid=CjwKCAiA76-dBhByEiwAA0_s9a3CGg0wte7WF0nzfE8LxxATgBeu8D-NtRJhc_z_eU9EDQOuRplEhRoCMpEQAvD_BwE)
 - [On Ebay](https://www.ebay.ie/itm/125166873517?hash=item1d2486ebad:g:NOQAAOSwMQhiAPpR&amdata=enc%3AAQAHAAAA0F%2BheJVR6UsFjMSxXZ1KEf%2FoHHnXU8Atp%2FoMmDqmjjPwvT1Dr2jTIdeFZ1Fc4%2Feu%2B3mKjeHF2TgkJfmzcb3otvvE%2BPuIlzH2TJNlagoGQSgeFbBV8D7wGRjucIUR1yh7aYC4oP2jiZBhrn1W9%2F1Sk3jbCEhRxFlLOkJOcQqvzFOF53v9C%2BEQJwCXcwfiLvVWZ2IsMXsvE3xYIu0ibPsbygB1Mh4BMFVn0z19gpFC9TM3w0hG2up78OJ7j%2Bba8XDvAWeBxSK33mmiASB6vwAa8LM%3D%7Ctkp%3ABk9SR97w4aGrYQ)
+- [ECG Monitoring Kit](https://www.circuitschools.com/ecg-monitoring-system-using-ad8232-with-arduino-or-esp32-iot-based/)
+- [EEG Electrodes](https://www.researchgate.net/publication/329165944_Mind_your_thoughts_BCI_using_single_EEG_electrode)
 
 
 ## Software
