@@ -4,6 +4,7 @@ Using Light and other sensory forms for Biofeedback
 
 ## References
 
+- [OpenEEG project](https://openeeg.sourceforge.net/doc/)
 - [Biofeedback through ambient light for stress intervention and relaxation assistance](https://link.springer.com/article/10.1007/s00779-018-1141-6)
 - [Binaural Beats & Hemi Sync Technology](https://consciousnessliberty.com/unlock-your-genius-through-brain-synchronization/)
 - [The Treatment of Migraine with Variable Frequency Photo-Stimulation](http://www.abcwellness.com/migraines.html)
@@ -35,6 +36,7 @@ Using Light and other sensory forms for Biofeedback
 ## Reference Software Projects
 
 - [Mini Arduino Portable EEG - Brain Wave Monitor](https://www.instructables.com/Mini-Arduino-Portable-EEG-Brain-Wave-Monitor-/)
+- [Open EEG Project](https://frontiernerds.com/brain-hack)
 
 ## Creating a Project
 
