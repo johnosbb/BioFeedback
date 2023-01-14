@@ -22,6 +22,7 @@ Using Light and other sensory forms for Biofeedback
 - [ECG Monitoring Kit](https://www.circuitschools.com/ecg-monitoring-system-using-ad8232-with-arduino-or-esp32-iot-based/)
 - [EEG Electrodes](https://www.researchgate.net/publication/329165944_Mind_your_thoughts_BCI_using_single_EEG_electrode)
 - [Paper on the use of ThinkGear AM (TGAM) module manufactured by NeuroSk](https://par.nsf.gov/servlets/purl/10169324)
+- [NeuroSky Sensors](https://neurosky.com/)
 
 
 ## Software
