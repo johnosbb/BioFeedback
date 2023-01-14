@@ -21,6 +21,7 @@ Using Light and other sensory forms for Biofeedback
 - [On Ebay](https://www.ebay.ie/itm/125166873517?hash=item1d2486ebad:g:NOQAAOSwMQhiAPpR&amdata=enc%3AAQAHAAAA0F%2BheJVR6UsFjMSxXZ1KEf%2FoHHnXU8Atp%2FoMmDqmjjPwvT1Dr2jTIdeFZ1Fc4%2Feu%2B3mKjeHF2TgkJfmzcb3otvvE%2BPuIlzH2TJNlagoGQSgeFbBV8D7wGRjucIUR1yh7aYC4oP2jiZBhrn1W9%2F1Sk3jbCEhRxFlLOkJOcQqvzFOF53v9C%2BEQJwCXcwfiLvVWZ2IsMXsvE3xYIu0ibPsbygB1Mh4BMFVn0z19gpFC9TM3w0hG2up78OJ7j%2Bba8XDvAWeBxSK33mmiASB6vwAa8LM%3D%7Ctkp%3ABk9SR97w4aGrYQ)
 - [ECG Monitoring Kit](https://www.circuitschools.com/ecg-monitoring-system-using-ad8232-with-arduino-or-esp32-iot-based/)
 - [EEG Electrodes](https://www.researchgate.net/publication/329165944_Mind_your_thoughts_BCI_using_single_EEG_electrode)
+- [Paper on the use of ThinkGear AM (TGAM) module manufactured by NeuroSk](https://par.nsf.gov/servlets/purl/10169324)
 
 
 ## Software
