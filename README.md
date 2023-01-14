@@ -5,6 +5,8 @@ Using Light and other sensory forms for Biofeedback
 ## References
 
 - [biofeedback through ambient light for stress intervention and relaxation assistance](https://link.springer.com/article/10.1007/s00779-018-1141-6)
+- [Binaural Beats & Hemi Sync Technology](https://consciousnessliberty.com/unlock-your-genius-through-brain-synchronization/)
+- [Brainwave Frequenceies](https://consciousnessliberty.com/5-brainwave-states-you-should-know-about/)
 - [WS2812B based project]https://howtomechatronics.com/tutorials/arduino/how-to-control-ws2812b-individually-addressable-leds-using-arduino/)
 - [FastLed Library Github](https://github.com/FastLED/FastLED)
 - [FastLed Homepage](https://fastled.io/)
@@ -28,3 +30,15 @@ Using Light and other sensory forms for Biofeedback
 You will need to add the FastLed library
 
 ![image](https://user-images.githubusercontent.com/12407183/211160904-41686885-6011-4fcd-9484-16df4f490fdf.png)
+
+
+## Research
+
+### Brainwave Frequences
+
+| Brain Wave | Frequency | Details |
+|------|-----------|----------|
+| Gamma |  38 to 100 HZ | Associated with active thought. |
+| Beta | 12 to 38 HZ  | Beta state is the dominant state of the alert, waking mind. |
+| Alpha | 8 to 12 HZ |  Alpha waves and slower and higher in amplitude than beta waves. Alpha state is a relaxed and usually meditative state.   |
+| Theta |  3 to 8 HZ | Theta brainwaves are of greater amplitude to alpha and even slower. Usually, theta brainwaves occur when you are in a dreaming state of sleeping and in deep meditation. |
