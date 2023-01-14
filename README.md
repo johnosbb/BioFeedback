@@ -4,8 +4,9 @@ Using Light and other sensory forms for Biofeedback
 
 ## References
 
-- [biofeedback through ambient light for stress intervention and relaxation assistance](https://link.springer.com/article/10.1007/s00779-018-1141-6)
+- [Biofeedback through ambient light for stress intervention and relaxation assistance](https://link.springer.com/article/10.1007/s00779-018-1141-6)
 - [Binaural Beats & Hemi Sync Technology](https://consciousnessliberty.com/unlock-your-genius-through-brain-synchronization/)
+- [Effect of Near-Infrared Pulsed Light on the Human Brain Using Electroencephalography](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7954620/)
 - [Brainwave Frequenceies](https://consciousnessliberty.com/5-brainwave-states-you-should-know-about/)
 - [WS2812B based project]https://howtomechatronics.com/tutorials/arduino/how-to-control-ws2812b-individually-addressable-leds-using-arduino/)
 - [FastLed Library Github](https://github.com/FastLED/FastLED)
@@ -42,3 +43,4 @@ You will need to add the FastLed library
 | Beta | 12 to 38 HZ  | Beta state is the dominant state of the alert, waking mind. |
 | Alpha | 8 to 12 HZ |  Alpha waves and slower and higher in amplitude than beta waves. Alpha state is a relaxed and usually meditative state.   |
 | Theta |  3 to 8 HZ | Theta brainwaves are of greater amplitude to alpha and even slower. Usually, theta brainwaves occur when you are in a dreaming state of sleeping and in deep meditation. |
+| Delta |  .5 to 3 HZ | Delta brainwaves are of higher amplitude than beta. Slow, loud and deep — like a drum beat. They are created in deep, dreamless sleep and in the deepest meditations. |
