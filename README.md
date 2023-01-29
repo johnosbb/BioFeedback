@@ -13,6 +13,7 @@ Using Light and other sensory forms for Biofeedback
 - [WS2812B based project]https://howtomechatronics.com/tutorials/arduino/how-to-control-ws2812b-individually-addressable-leds-using-arduino/)
 - [FastLed Library Github](https://github.com/FastLED/FastLED)
 - [FastLed Homepage](https://fastled.io/)
+- [Mapping a Color wheel to a Joystick](https://github.com/calvinnnnnx5/Color-Wheel)
 
 ## Hardware
 
