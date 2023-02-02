@@ -47,7 +47,7 @@ Using Light and other sensory forms for Biofeedback
 
 One of the easiest ways to sync the left and right hemispheres of your brain is through binaural beats. This involves delivering sound waves of sightly different frequencies through headphones into each each to produce brainwave entrainment that follows the difference in hertz between each frequency. 
 So if one ear is hearing 100 HZ and the other is hearing 107 HZ, there is a difference of 7 HZ and your brain will entrain (or follow) the frequency of 7 HZ, thus falling into theta brainwave frequency. Read more about brainwave frequencies here.
-I will evaluate to see if this also works with light.
+I will evaluate to see if this also works with rythimic light [See](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4737907/).
 
 
 ## Creating a Project
