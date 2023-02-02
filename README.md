@@ -5,6 +5,7 @@ Using Light and other sensory forms for Biofeedback
 ## References
 
 - [OpenEEG project](https://openeeg.sourceforge.net/doc/)
+- [Optimal flickering light stimulation for entraining gamma waves in the human brain](https://www.nature.com/articles/s41598-021-95550-1)
 - [Biofeedback through ambient light for stress intervention and relaxation assistance](https://link.springer.com/article/10.1007/s00779-018-1141-6)
 - [Binaural Beats & Hemi Sync Technology](https://consciousnessliberty.com/unlock-your-genius-through-brain-synchronization/)
 - [The Treatment of Migraine with Variable Frequency Photo-Stimulation](http://www.abcwellness.com/migraines.html)
