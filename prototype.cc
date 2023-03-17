@@ -3,17 +3,23 @@
 #include <Keypad.h>
 #include <math.h>
 #include <stdlib.h>
+//#include <Arduino.h>
+#include <StensTimer.h>
 
-
+#define LEFT_ACTION 1
+#define RIGHT_ACTION 2
 
 #define LED_PIN_LEFT_EYE     7
 #define LED_PIN_RIGHT_EYE     8
 #define NUM_LEDS    12
 #define MAX_DELAY 200
 #define CYCLE 0
-#define FREQ_10HZ 100 //100 msec delay 
-#define VERBOSE 1
+#define FREQ_10HZ 50 //100 msec delay 50% Duty Cycle
+#define FREQ_20HZ 25 //100 msec delay  50% Duty Cycle
+#define VERBOSE 0
+#define KEYBOARD_DEBUG 1
 #define SHOW_HSV_TO_RGB_CALCULATIONS 0
+
 
 const byte ROWS = 1; // number of rows
 const byte COLS = 4; // number of columns
@@ -25,16 +31,24 @@ byte rowPins[ROWS] = {9};
 byte colPins[COLS] = {10,11, 12, 13};
 Keypad keypad = Keypad(makeKeymap(keys), rowPins, colPins, ROWS, COLS);
 
-#define VRX_PIN  A0 // Arduino pin connected to VRX pin
-#define VRY_PIN  A1 // Arduino pin connected to VRY pin
-#define SW_PIN   2  // Arduino pin connected to SW  pin
+#define VRX_PIN  A0 // Arduino pin connected to VRX pin of joystick
+#define VRY_PIN  A1 // Arduino pin connected to VRY pin of joystick
+#define SATURATION_PIN  A2 // Arduino pin connected to Saturation potentiometer
+#define VALUE_PIN  A3 // Arduino pin connected to Saturation potentiometer
+#define SW_PIN   2  // Arduino pin connected to SW pin of joystick
+#define ON 1
+#define OFF 0
 
 ezButton button(SW_PIN);
 
+bool LockSettings = false;
+int SaturationAnalogReading = 0;
+int ValueAnalogReading = 0;
 int xValue = 0; // To store value of the X axis
 int yValue = 0; // To store value of the Y axis
 int bValue = 0; // To store value of the button
-int frequency = FREQ_10HZ;
+int frequency1 = FREQ_10HZ;
+int frequency2 = FREQ_20HZ;
 int centre = 508;
 double Value = 1.0;
 double Saturation = 1.0;
@@ -43,13 +57,94 @@ CRGB ledsRight[NUM_LEDS];
 CRGB ledsLeft[NUM_LEDS];
 CRGB ledReference;
 unsigned long colors[12] = {CRGB::DarkBlue, CRGB::MidnightBlue, CRGB::Navy, CRGB::MediumBlue, CRGB::DarkSlateBlue, CRGB::Aqua , CRGB::Indigo, CRGB::DarkViolet, CRGB::DarkMagenta , CRGB::DeepPink, CRGB::Crimson,  CRGB::Red};
+int selectedProgram = 1;
+/* stensTimer variable to be used later in the code */
+StensTimer* mainTimer = NULL;
+Timer* leftTimer = NULL;
+Timer* rightTimer = NULL;
+
+int leftEyeState = OFF;
+int rightEyeState = OFF;
+
+// Our counter variable
+int counter = 0;
+
+void programCallback(Timer* timer){
+    int action = timer->getAction();
+    if(1)
+    {
+      if(VERBOSE)  
+      {
+        Serial.print(action);  
+        Serial.print("\n");
+      }
+    }
+   /* check if the timer is one we expect */
+  if(LEFT_ACTION == action){
+    if(leftEyeState) {
+      turnOff(LED_PIN_LEFT_EYE);
+      leftEyeState = OFF;
+    }
+    else
+    {
+      turnOn(LED_PIN_LEFT_EYE);   
+      leftEyeState = ON;   
+    }
+  }
+  else if(RIGHT_ACTION == action){
+    if(rightEyeState) {
+      turnOff(LED_PIN_RIGHT_EYE);
+      rightEyeState = OFF;
+    }
+    else
+    {
+      turnOn(LED_PIN_RIGHT_EYE);   
+      rightEyeState = ON;   
+    }
+  }
+}
+
+
+void programOne()
+{
+    if(leftTimer)
+        mainTimer->deleteTimer(leftTimer);
+    leftTimer = mainTimer->setInterval(LEFT_ACTION, 50);  
+    if(rightTimer)
+      mainTimer->deleteTimer(rightTimer);
+    rightTimer = mainTimer->setInterval(RIGHT_ACTION, 500);;
+}
+
+void programTwo()
+{
+    if(leftTimer)
+        mainTimer->deleteTimer(leftTimer);
+    leftTimer = mainTimer->setInterval(LEFT_ACTION, 50);  
+    if(rightTimer)
+      mainTimer->deleteTimer(rightTimer);
+    rightTimer = mainTimer->setInterval(RIGHT_ACTION, 50);;
+}
+
+void programThree()
+{
+    if(leftTimer)
+        mainTimer->deleteTimer(leftTimer);
+    leftTimer = mainTimer->setInterval(LEFT_ACTION, 500);  
+    if(rightTimer)
+      mainTimer->deleteTimer(rightTimer);
+    rightTimer = mainTimer->setInterval(RIGHT_ACTION, 500);;
+}
+
 
 void setup() {
-
   FastLED.addLeds<WS2812, LED_PIN_RIGHT_EYE, GRB>(ledsRight, NUM_LEDS);
   FastLED.addLeds<WS2812, LED_PIN_LEFT_EYE, GRB>(ledsLeft, NUM_LEDS);
   Serial.begin(9600);
-
+    /* Save instance of StensTimer to the tensTimer variable*/
+  mainTimer = StensTimer::getInstance();
+  /* Tell StensTimer which callback function to use */
+  mainTimer->setStaticCallback(programCallback);
+  programOne();  
 }
 
 
@@ -129,25 +224,54 @@ void HSVToRGB(double hue, double saturation, double value, int* rgb)
 
 
 
+void poteniometer()
+{
+
+ 
+  if (!LockSettings)
+    SaturationAnalogReading = analogRead(SATURATION_PIN);
+  Saturation = (double)((double)SaturationAnalogReading/(double)1023);
+  if(VERBOSE)
+  {  
+    Serial.println("Saturation = ");
+    Serial.println(SaturationAnalogReading);
+    Serial.println(Saturation); 
+  }  
+  if (!LockSettings)  
+    ValueAnalogReading = analogRead(VALUE_PIN);  
+  Value = (double)((double)ValueAnalogReading/(double)1023);
+  if(VERBOSE)
+  {  
+    Serial.println("Val = ");
+    Serial.println(ValueAnalogReading);
+    Serial.println(Value);
+  }
+}
+
 void joystick()
 {
   char buffer[40];
 
-  xValue = analogRead(VRX_PIN);
-  yValue = analogRead(VRY_PIN);
+  if (!LockSettings)
+  {
+    xValue = analogRead(VRX_PIN);
+    yValue = analogRead(VRY_PIN);
+  }  
   button.loop();
     // Read the button value
   bValue = button.getState();
 
   if (button.isPressed()) {
-    Serial.println("The joystick button is pressed");
+    if(VERBOSE)
+      Serial.println("The joystick button is pressed");
     Saturation = 1;
     Value = 1;
     // TODO do something here
   }
 
   if (button.isReleased()) {
-    Serial.println("The joystick button is released");
+    if(VERBOSE)
+      Serial.println("The joystick button is released");
     // TODO do something here
   }
   if(VERBOSE)
@@ -204,7 +328,8 @@ void joystick()
     // getRGBVals(hue, rgb,.2,.2);
     HSVToRGB(hue, Saturation, Value,rgb);
     //getRGBVals(hue, rgb);
-    ledReference.setRGB(rgb[0],rgb[1],rgb[2]);
+  
+    ledReference.setRGB(rgb[0],rgb[1],rgb[2]);          
     free(rgb);
 
   }
@@ -213,34 +338,39 @@ void joystick()
 
 
 
-void flashAlternative(int delay_period, unsigned long int color)
+
+
+void turnOn(int eye)
 {
   int i = 0;
-
+  CRGB * glassLeds;
+  if(eye == LED_PIN_RIGHT_EYE )
+    glassLeds = ledsRight;
+  else
+    glassLeds = ledsLeft;
   for(i =0;i < NUM_LEDS;i++)
   {
-    //leds[i].fadeToBlackBy( 64 );
-    ledsRight[i] = CRGB::Black;
-    FastLED.show();
-    ledsLeft[i].r = ledReference.r;
-    ledsLeft[i].g = ledReference.g;
-    ledsLeft[i].b = ledReference.b;
+    glassLeds[i].r = ledReference.r;
+    glassLeds[i].g = ledReference.g;
+    glassLeds[i].b = ledReference.b;
     FastLED.show();
   }
-  delay(delay_period/2);
-  for(i =0;i < NUM_LEDS;i++)
-  {
-    ledsRight[i].r = ledReference.r;
-    ledsRight[i].g = ledReference.g;
-    ledsRight[i].b = ledReference.b;
-    FastLED.show();
-    ledsLeft[i] = CRGB::Black;
-    FastLED.show();
-  }
-  delay(delay_period/2);
 }
 
-
+void turnOff(int eye)
+{
+  int i = 0;
+  CRGB * glassLeds;
+  if(eye == LED_PIN_RIGHT_EYE )
+    glassLeds = ledsRight;
+  else
+    glassLeds = ledsLeft;
+  for(i =0;i < NUM_LEDS;i++)
+  {
+    glassLeds[i] = CRGB::Black;
+    FastLED.show();
+  }
+}
 
 
 void flash(int eye,int delay_period, unsigned long int color)
@@ -269,37 +399,54 @@ void flash(int eye,int delay_period, unsigned long int color)
 }
 
 
+void changeProgram()
+{
+    if(selectedProgram == 1)
+      programOne();
+    else if(selectedProgram == 2)  
+      programTwo();  
+    else
+      programThree();    
+}
+
 void handleKeys(byte key)
 {
   if(key == '1')
   {
-    //Serial.println("Received number 1");
-    Saturation += .1;
-    if(Saturation > 1)
-      Saturation = 1;
-
+    if(KEYBOARD_DEBUG)
+      Serial.println("Received number 1");     
+    if(LockSettings)
+    {    
+      LockSettings   = false;
+      Serial.println("LockSettings is disabled");
+    }
+    else
+    {
+      LockSettings   = true;
+      Serial.println("LockSettings is enabled");
+    }
   }
   else if(key == '2')
   {
-    //Serial.println("Received number 2");
-    Saturation -= .1;
-    if(Saturation < 0)
-      Saturation = 0;
+    if(KEYBOARD_DEBUG)
+      Serial.println("Received number 2");
+    selectedProgram += 1;      
+    if(selectedProgram > 4)
+      selectedProgram   = 1;        
+    changeProgram();
   }
   else if(key == '3')
   {
-    //Serial.println("Received number 3");
-    Value += .1;
-    if(Value > 1)
-      Value = 1;
-
+    if(KEYBOARD_DEBUG)    
+      Serial.println("Received number 3");
+    selectedProgram = 3;
+    programThree();
   }
   else if(key == '4')
   {
-    //Serial.println("Received number 4");
-    Value -= .1;
-    if(Value < 0)
-      Value = 0;
+    if(KEYBOARD_DEBUG)
+      Serial.println("Received number 4");
+
   }
   else
   {
@@ -315,30 +462,36 @@ void loop() {
   char buffer[40];
   if (key != NO_KEY)
   {
-    sprintf(buffer,"Key: %c \n", key);
-    Serial.print(buffer);
-    Serial.print("\n");  
-    handleKeys(key);
+      if (VERBOSE) {
+        sprintf(buffer,"Key: %c \n", key);
+        Serial.print(buffer);
+        Serial.print("\n");
+      }  
+      handleKeys(key);
   }
-  joystick();
-
-    
-    // frequency = FREQ_10HZ + (xValue * .203);
-    frequency = FREQ_10HZ + (xValue * .203);
-    if (VERBOSE) {
-    Serial.print("Saturation: ");
-    Serial.print(Saturation);
-    Serial.print("\n");
-    Serial.print("Value: ");
-    Serial.print(Value);
-    Serial.print("\n");
+  joystick();    
+  poteniometer();
+  mainTimer->run();
+  if(selectedProgram == 4)
+  {
+        programThree();
+  }  
+  // frequency = FREQ_10HZ + (xValue * .203);
+  frequency1 = FREQ_10HZ + (xValue * .203);
+  if (VERBOSE) {
+  Serial.print("Saturation: ");
+  Serial.print(Saturation);
+  Serial.print("\n");
+  Serial.print("Value: ");
+  Serial.print(Value);
+  Serial.print("\n");
 
   } 
-    if(VERBOSE)
-    {
-      sprintf(buffer," Setting frequency to %d \n", frequency);
-      Serial.print(buffer);
-      Serial.print("\n");
-    }
-  flashAlternative(frequency, color);
+  if(VERBOSE)
+  {
+    sprintf(buffer," Setting frequency to %d \n", frequency1);
+    Serial.print(buffer);
+    Serial.print("\n");
+  }
+  
 }
