@@ -18,6 +18,8 @@ Using Light and other sensory forms for Biofeedback
 
 ## Hardware
 
+### EEG
+
 - [WS2812 Hookup Guide](https://learn.sparkfun.com/tutorials/ws2812-breakout-hookup-guide/hardware-hookup)
 - [TLC59711 Code](https://github.com/adafruit/Adafruit_TLC59711/blob/master/Adafruit_TLC59711.cpp)
 - [Hardware](https://www.adafruit.com/product/1455?hidden=yes&main_page=product_info&products_id=1455&gclid=CjwKCAiA76-dBhByEiwAA0_s9a3CGg0wte7WF0nzfE8LxxATgBeu8D-NtRJhc_z_eU9EDQOuRplEhRoCMpEQAvD_BwE)
@@ -27,6 +29,9 @@ Using Light and other sensory forms for Biofeedback
 - [Paper on the use of ThinkGear AM (TGAM) module manufactured by NeuroSk](https://par.nsf.gov/servlets/purl/10169324)
 - [NeuroSky Sensors](https://neurosky.com/)
 - [Low cost open source EEG device based on OpenEEG](https://www.olimex.com/Products/EEG/OpenEEG/EEG-SMT/open-source-hardware)
+
+### AD8232 Heart Rate Monitor Sensor
+- [AD8232 Heart Rate Monitor Sensor](https://robu.in/ecg-sensor-ad8232-heart-rate-monitor-detail-guide-interfacing-with-arduino/)
 
 
 ## Software
