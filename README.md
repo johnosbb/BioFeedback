@@ -74,3 +74,7 @@ You will need to add the FastLed library
 | Alpha | 8 to 12 HZ |  Alpha waves and slower and higher in amplitude than beta waves. Alpha state is a relaxed and usually meditative state.   |
 | Theta |  3 to 8 HZ | Theta brainwaves are of greater amplitude to alpha and even slower. Usually, theta brainwaves occur when you are in a dreaming state of sleeping and in deep meditation. |
 | Delta |  .5 to 3 HZ | Delta brainwaves are of higher amplitude than beta. Slow, loud and deep — like a drum beat. They are created in deep, dreamless sleep and in the deepest meditations. |
+
+## Commercial Projects
+
+- [dodow](https://www.mydodow.com/dodow/en-ie/scientific-demonstration?gad=1&gclid=CjwKCAjw6IiiBhAOEiwALNqncdIMD7CzkcbMuFR_KepkTUFYvvAJTTCkQwF_mBmKy2tIrGR3i_yx9RoCYEsQAvD_BwE)
